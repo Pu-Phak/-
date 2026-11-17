@@ -1,0 +1,8 @@
+{
+  "name": "Shared Dropzone - ศูนย์แชร์และดาวน์โหลดไฟล์สาธารณะ",
+  "description": "เว็บแชร์ไฟล์ส่วนกลางที่ทุกคนสามารถลากไฟล์มาวาง และผู้เข้าชมทุกคนจะเห็นไฟล์ทันที พร้อมดูตัวอย่างและดาวน์โหลดไฟล์ได้",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

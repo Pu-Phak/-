@@ -1,0 +1,227 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Akshar', 'Athiti', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: 'Akshar', 'Athiti', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    background-color: #faf9f6;
+    background-image: linear-gradient(to right, rgba(220, 38, 38, 0.04) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(220, 38, 38, 0.04) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .dark body {
+    background-color: #040102;
+    background-image: linear-gradient(to right, rgba(220, 38, 38, 0.07) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(220, 38, 38, 0.07) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Akshar', 'Athiti', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  button, input, select, textarea, p, span, a, label {
+    font-family: 'Akshar', 'Athiti', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(249, 115, 22, 0.35);
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(220, 38, 38, 0.6);
+}
+
+@keyframes staggerReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-item-anim {
+  animation: staggerReveal 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Subtle floating iPhone glass card effect */
+@keyframes floatSubtle {
+  0%, 100% {
+    transform: translateY(-4px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.floating-glass-card {
+  animation: floatSubtle 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-glass-card {
+    animation: none;
+    transform: translateY(-6px);
+  }
+}
+
+/* Sharp-angled square corners across icon boxes and workspace panels */
+.rounded-icon-box {
+  border-radius: 0px !important;
+}
+
+.rounded-icon-box-sm {
+  border-radius: 0px !important;
+}
+
+.rounded-icon-box-lg {
+  border-radius: 0px !important;
+}
+
+/* Sharp-angled square corners for Header, Discovery, Modals, and Buttons */
+.rounded-discovery-panel {
+  border-radius: 0px !important;
+}
+
+.rounded-discovery-card {
+  border-radius: 0px !important;
+}
+
+.rounded-discovery-btn {
+  border-radius: 0px !important;
+}
+
+.rounded-discovery-pill {
+  border-radius: 0px !important;
+}
+
+/* Official Sign in with Google Material Button styling (Sharp-angled) */
+.gsi-material-button {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-appearance: none;
+  background-color: #f1f5f9;
+  background-image: none;
+  border: none;
+  border-radius: 0px !important;
+  box-sizing: border-box;
+  color: #1f1f1f;
+  cursor: pointer;
+  font-family: 'Akshar', 'Athiti', 'Roboto', arial, sans-serif;
+  font-size: 14px;
+  height: 40px;
+  letter-spacing: 0.25px;
+  outline: none;
+  overflow: hidden;
+  padding: 0 16px;
+  position: relative;
+  text-align: center;
+  transition: background-color 0.218s, box-shadow 0.218s;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: auto;
+  max-width: 400px;
+  min-width: min-content;
+}
+
+.gsi-material-button .gsi-material-button-icon {
+  height: 20px;
+  margin-right: 12px;
+  min-width: 20px;
+  width: 20px;
+}
+
+.gsi-material-button .gsi-material-button-content-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 100%;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.gsi-material-button .gsi-material-button-contents {
+  flex-grow: 1;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: top;
+}
+
+.gsi-material-button .gsi-material-button-state {
+  transition: opacity 0.218s;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.gsi-material-button:disabled {
+  cursor: default;
+  background-color: #ffffff61;
+}
+
+.gsi-material-button:disabled .gsi-material-button-contents,
+.gsi-material-button:disabled .gsi-material-button-icon {
+  opacity: 38%;
+}
+
+.gsi-material-button:not(:disabled):hover {
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+}
+
+.gsi-material-button:not(:disabled):hover .gsi-material-button-state {
+  background-color: #303030;
+  opacity: 8%;
+}
+
+@keyframes menuFlowDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-14px) scaleY(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+.menu-flow-down {
+  transform-origin: top left;
+  animation: menuFlowDown 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+

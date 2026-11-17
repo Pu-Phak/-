@@ -1,0 +1,5 @@
+Welcome to SharedDrop!
+
+This is a public shared dropzone.
+You can drag and drop any file here to share it with everyone.
+Anyone who visits can preview and download files instantly.
